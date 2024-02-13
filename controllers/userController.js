@@ -1,5 +1,5 @@
 const { ObjectId } = require('mongoose').Types;
-const { User, Thought } = require('./models');
+const { User, Thought } = require('../Models');
 
 
 module.exports = {
@@ -46,7 +46,7 @@ module.exports = {
             if (!user) {
                 return res
                     .status(404)
-                    .json({ message: 'No user found with that ID :(' });
+                    .json({ message: 'No user with that ID' });
             }
             res.json(user);
         } catch (err) {
